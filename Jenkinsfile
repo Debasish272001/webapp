@@ -32,14 +32,14 @@ pipeline {
                 sshagent(['deploy']) {
     sh """
                  
-            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@13.233.13.162:/home/ec2-user/tomcat8/webapps/
+            scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@:54.80.149.171/home/ec2-user/tomcat8/webapps/
 
-              ssh ec2-user@13.233.13.162 /home/ec2-user/tomcat8/bin/shutdown.sh
-               ssh ec2-user@13.233.13.162 /home/ec2-user/tomcat8/bin/startup.sh
+              ssh ec2-user@54.80.149.171 /home/ec2-user/tomcat8/bin/shutdown.sh
+               ssh ec2-user@54.80.149.171 /home/ec2-user/tomcat8/bin/startup.sh
             
           
           """
-
+                }
 }
             }
         }
