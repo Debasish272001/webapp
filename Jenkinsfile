@@ -42,7 +42,6 @@ pipeline {
                 }
 }
             }
-        }
         stage("backup") {
             steps {
                 nexusArtifactUploader artifacts: [[artifactId: 'idream-it-solutions', classifier: '', file: 'target/myweb.war', type: 'war']], credentialsId: 'nexus', groupId: 'com.idream.webapp', nexusUrl: '3.111.144.41:8080/nexus', nexusVersion: 'nexus2', protocol: 'http', repository: 'repoR', version: '1.1'
